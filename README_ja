@@ -1,0 +1,74 @@
+
+RSyntaxTree: Ruby 言語による樹形図作成システム
+==============================================
+
+
+概要
+----
+
+[RSyntaxTree](http://www.yohasebe.com/rsyntaxtree) は理論言語学（主に生成文法理論）で一般的に用いられる樹形図の画像を生成するプログラムです。[Ruby](http://ruby-lang.org) 言語で作成されています。アルゴリズムやインタフェイスは André Eisenbach 氏による [phpSyntaxTree](http://ironcreek.net/phpsyntaxtree/) を基にしています。phpSyntaxTree が日本語などの言語のマルチバイト文字を受け付けないのに対し、RSyntaxTree はフォントさえあれば 多くの UTF-8 で記述可能な言語を扱うことができます。使いやすい API と [Ruby on Rails](http://www.rubyonrails.org/) で作成された Web インタフェイスを備えています。
+
+実際に動く Web インタフェイスが <http://yohasebe.com/rsyntaxtree> から利用可能です。
+
+サンプル画像: [English JPG](http://www.yohasebe.com/img/rsyntaxtree_en.jpg), [Japanese PNG](http://www.yohasebe.com/img/rsyntaxtree_ja.png)
+
+ソースコードは <http://rubyforge.org/projects/rsyntaxtree/> からダウンロード可能です。
+
+RSyntaxTree は [the GNU Public License](http://www.gnu.org/copyleft/gpl.html)のもとで配布されています。
+
+使い方
+------
+
+ラベル付き括弧記法で文を記述し Draw ボタンをクリックしてみてください。括弧の対応が正しければ、すぐに樹形図が表示されるはずです。現在は英語と日本語の文にのみ対応していますが、上述の通り、フォントを用意すれば他の言語も利用可能です。
+
+ツリーにおけるすべてのブランチ（枝）およびリーフ（葉）はノード（節点）に属します。ノードを作成するには開き括弧の右隣にラベルを記述してください。その後に半角スペースを区切り文字として任意の数のブランチを加えていくことができます。
+
+`Triangles`  オプションをオンにしてみてください。ノードがリーフを1個だけ持っており、なおかつそのリーフに1個以上の半角スペースが含まれているとき（つまり「句」から投射されるノードであるとき）、ノードとリーフの間に直線ではなく三角形が描かれます（生成文法をご存知の人にはお馴染みの形式ですね）。
+
+ノードの各ラベルにはサブスクリプトを付けることができます。メインとなるラベルの後に半角のアンダースコアを間に挟んでサブスクリプトとなるラベルを記述してください。例えば `NP_TOP` と書くと NP<sub>TOP</sub> のように表示されます。また `Auto subscript` オプションがオンになっていれば、同じラベルを持つ複数のノードに連番が付加されます（e.g. NP<sub>1</sub>, NP<sub>2</sub>）。
+
+画像のフォーマットは png, jpg, gif, bmp の中から選択できます。当然ながら出力ファイルは「右クリックして保存」することができます。その他、SVG (support vector graphics) ファイルの出力にも対応しています。SVG は後で画像を修正したり加工したりするのに適した形式です。Adobe Illustrator や Microsoft Visio などが SVG ファイルの読み込みに対応しています。SVG ファイルをダウンロードするには、いったん非 SVG の画像を生成し、すぐ下に現れるリンクをクリックしてください。
+
+その他には `Font`, `Fontsize`, `Color` といったオプションがあります。これらについて説明の必要はないでしょう。目的に合わせて色々試してみてください。
+
+動作条件
+--------
+
+### コマンドライン・アプリケーション／ライブラリとして利用する場合 ###
+
+Ruby 1.8 以上と RMagick が必要です。RMagickをインストールするには ImageMagick または GraphickMagick が必要です。
+
+### Web アプリケーションとして利用する場合 ###
+
+上の条件に加え、Apache などの Web サーバーと Ruby on Rails 1.0 以上が必要です。
+
+インストール
+------------
+
+[the project site](http://rubyforge.org/projects/rsyntaxtree/) からパッケージをダウンロードし適当な場所に展開します。Ruby から実行する際の方法については `/bin/stgraph.rb` を参考にしてください。
+
+Web インタフェイスとともに利用する際にはまず次のコマンドで新しい Rails アプリケーションを作成します。
+
+      rails your_new_application
+
+次に RSyntaxTree パッケージの全てのフォルダとファイルを `RAILS_ROOT` にコピーし、必要ならばパーミッションの設定を行ってください。
+
+連絡先
+------
+
+問題や提案などがありましたら [プロジェクトサイト](http://rsyntaxtree.rubyforge.org) を通じて、あるいは作者に直接メールでお知らせください。
+
+E-mail: <yohasebe@gmail.com>
+
+謝辞
+----
+
+次の方々に感謝します。
+
+* phpSyntaxTree の作者である André Eisenbach さん
+
+* ImageMagick グラフィックライブラリの開発者の方々と ImageMagick の Ruby インタフェイスである RMagick の作者 Timothy P. Hunter さん
+
+* Ruby の開発者である まつもとゆきひろさんをはじめ数多くの Ruby コミュニティの皆さん。
+
+$Id$

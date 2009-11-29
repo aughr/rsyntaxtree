@@ -1,0 +1,32 @@
+/*
+* ==========================
+*  rsprint.css
+* ==========================
+*
+* rSyntaxTree - Printing stylesheet
+* 
+* Printing stylesheet that hides everything but the phrase and the graph.
+*
+* Copyright (c) 2007      Yoichiro Hasebe <yohasebe@gmail.com>
+* Copyright (c) 2003-2004 Andre Eisenbach <andre@ironcreek.net>
+* 
+* $Id$
+*/
+
+fieldset {
+  border: 0;
+}
+
+h1, #about, #usage, #footer, #form, #options, #news, #tip {
+  display: none;
+}
+
+#phrase {
+  display: block;
+}
+
+#content {
+  text-align: center;
+  border: 0;
+}
+

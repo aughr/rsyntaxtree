@@ -1,0 +1,69 @@
+
+RSyntaxTree: Yet another syntax tree generator made with Ruby
+=============================================================
+
+About
+-----
+
+[RSyntaxTree](http://www.yohasebe.com/rsyntaxtree) is a graphical syntax tree generator written in the [Ruby](http://ruby-lang.org) programming language.  It is a port of [phpSyntaxTree](http://ironcreek.net/phpsyntaxtree/) created by André Eisenbach.  While phpSyntaxTree does not accept multi-byte characters as those in Japanese, RSyntaxTree handles text of any language as long as it can be encoded in UTF-8 and fonts have been installed in the system.  It consists of an easy-to-use ruby library and web-based interface made with [Ruby on Rails](http://www.rubyonrails.org/).  
+
+Working web interface is available at <http://yohasebe.com/rsyntaxtree/>
+
+Sample Images: [English JPG](http://www.yohasebe.com/img/rsyntaxtree_en.jpg), [Japanese PNG](http://www.yohasebe.com/img/rsyntaxtree_ja.png)
+
+For the latest updates and downloads please visit <http://rubyforge.org/projects/rsyntaxtree/>
+
+RSyntaxTree is distributed under [the GNU Public License](http://www.gnu.org/copyleft/gpl.html).
+
+Usage
+----------------------
+
+Enter a sentence in a labeled bracket notation into the text area above and click the "Draw" button.  A graphical syntax tree will appear immediately.  English and Japanese are available at the moment.
+
+Every branch or leaf of a tree must belong to a node.  To create a node, place a label right next to the opening bracket.  Arbitrary number of  branches can follow with a preceding space.  When a node has one and only one leaf and the leaf contains more than one space character (i.e. when it's a phrase), a triangle is drawn instead of a vertical line if the "Triangles" option is on.
+
+You can put a subscript to any node by putting the _ character between the main label and the subscript.  For example, `NP_TOP` will be rendered as NP<sub>TOP</sub>.  Or you can select the "Auto subscript" option so that nodes of the same label will be automatically numbered. (e.g. NP<sub>1</sub>, NP<sub>2</sub>)
+
+You can select from multiple image formats (png, jpg, gif, and bmp).  Also RSyntaxTree is capable of generating SVG files.  This is very convenient for those who want to modify output images on third party vector graphic software (such as Adobe Illustrator and Microsoft Visio). Just click on the link that appears below the (non SVG) syntax tree image.
+
+Other options "Font", "Fontsize", and "Color" would be rather self-explanatory.  You can change the appearance of the resulting image to suit your purpose.
+
+*****
+
+Requirements
+------------
+
+### As a ruby application/library ###
+
+Ruby 1.8 or higher with RMagick (the latter requires your system have either ImageMagick or GraphickMagick already installed)
+
+### With web interface ###
+
+Web server with Ruby on Rails 1.0 or higher in addition to above.
+
+Installation
+------------
+First, download the archived package from [the project site](http://rubyforge.org/projects/rsyntaxtree/).  Unpack it and copy files and folders to a suitable directory of your system.  See `/bin/stgraph.rb` for how to create syntax trees from within a ruby script.
+
+If you prefer to use web interface,  build a new rails application:
+
+      rails your_new_application
+
+Then copy all the files and folders of RSyntaxTree package to `RAILS_ROOT` and set the permissions if necessary. 
+
+If you find any problems, or have any suggestions, please let me know via [the project site](http://rsyntaxtree.rubyforge.org), or send email to <yohasebe@gmail.com>
+
+Acknowledgments
+---------------
+I especially thank the following people: 
+
+*  André Eisenbach for creating phpSyntaxTree, which RSyntaxTree is largely
+   based on.
+
+*  Developers of ImageMagick graphic library and its Ruby interface RMagick
+   (Timothy P. Hunter).
+
+*  Yukihiro Matsumoto and other contributers to Ruby community for making such a
+   fun-to-use programming language possible.
+
+$Id$
