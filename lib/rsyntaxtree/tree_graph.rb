@@ -86,8 +86,6 @@ class TreeGraph
   def destroy
     if @im.respond_to? :destroy!
       @im.destroy!
-    else
-      @im.destroy
     end
   end
 
