@@ -35,12 +35,8 @@ class RsyntaxtreeController < ApplicationController
 
   def build_query
 
-    if !params[:data] || params[:data] == ""
+    if !params[:data] || params[:data].empty?
       render(:text => "There is no text to parse")
-
-    elsif params[:data].length > 512
-        @error = "Sorry, the input data is too large..."
-        render(:partial => 'error')
     else
       format     = params[:format]
       symmetrize =params[:symmetrize]
