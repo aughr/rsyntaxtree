@@ -1,6 +1,6 @@
 # just a PORO, not ActiveRecord
 class SyntaxTree
-  FONTS_DIR = "#{RAILS_ROOT}/vendor/fonts"
+  FONTS_DIR = "#{RAILS_ROOT}/lib/fonts"
   FONT_SERIF      = File.expand_path("#{FONTS_DIR}/vera/VeraSe.ttf")
   FONT_NONSERIF   = File.expand_path("#{FONTS_DIR}/vera/Vera.ttf")
   FONT_MBSERIF    = File.expand_path("#{FONTS_DIR}/ipa/ipamp.ttf")
