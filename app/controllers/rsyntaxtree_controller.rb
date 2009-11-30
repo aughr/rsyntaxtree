@@ -26,9 +26,6 @@
 
 require "rsyntaxtree"
 require 'cgi'
-require 'rubygems'
-require 'RMagick'
-include Magick
 
 class RsyntaxtreeController < ApplicationController
 
