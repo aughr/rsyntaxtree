@@ -1,11 +1,11 @@
 # just a PORO, not ActiveRecord
 class SyntaxTree
   FONTS_DIR = "#{RAILS_ROOT}/lib/fonts"
-  FONT_SERIF      = File.expand_path("#{FONTS_DIR}/vera/VeraSe.ttf")
-  FONT_NONSERIF   = File.expand_path("#{FONTS_DIR}/vera/Vera.ttf")
-  FONT_MBSERIF    = File.expand_path("#{FONTS_DIR}/ipa/ipamp.ttf")
-  FONT_MBNONSERIF = File.expand_path("#{FONTS_DIR}/ipa/ipagp.ttf")
-  FONT_MBNONJA    = File.expand_path("#{FONTS_DIR}/wqy-zenhei/wqy-zenhei.ttf")
+  FONT_SERIF      = "#{FONTS_DIR}/vera/VeraSe.ttf"
+  FONT_NONSERIF   = "#{FONTS_DIR}/vera/Vera.ttf"
+  FONT_MBSERIF    = "#{FONTS_DIR}/ipa/ipamp.ttf"
+  FONT_MBNONSERIF = "#{FONTS_DIR}/ipa/ipagp.ttf"
+  FONT_MBNONJA    = "#{FONTS_DIR}/wqy-zenhei/wqy-zenhei.ttf"
   
   def initialize(options={})
     options[:format] ||= 'png'
