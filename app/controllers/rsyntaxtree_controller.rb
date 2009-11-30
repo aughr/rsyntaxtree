@@ -54,10 +54,10 @@ class RsyntaxtreeController < ApplicationController
       text =<<EOD
 <div id='phrase'>#{new_data1}</div>
 <div id='graph'>
-<img src='/rsyntaxtree/rsyntaxtree/draw_graph?data=#{new_data2}&format=#{format}&symmetrize=#{symmetrize}&color=#{color}&terminal=#{terminal}&autosub=#{autosub}&serif=#{serif}&fontsize=#{fontsize}' alt='#{new_data2}'/>
+<img src='/rsyntaxtree/draw_graph?data=#{new_data2}&format=#{format}&symmetrize=#{symmetrize}&color=#{color}&terminal=#{terminal}&autosub=#{autosub}&serif=#{serif}&fontsize=#{fontsize}' alt='#{new_data2}'/>
 <br /><br />
 <small>
-<a href='/rsyntaxtree/rsyntaxtree/draw_graph?data=#{new_data2}&format=svg&symmetrize=#{symmetrize}&color=#{color}&terminal=#{terminal}&autosub=#{autosub}&serif=#{serif}&fontsize=#{fontsize}'>[Download SVG]</a>
+<a href='/rsyntaxtree/draw_graph?data=#{new_data2}&format=svg&symmetrize=#{symmetrize}&color=#{color}&terminal=#{terminal}&autosub=#{autosub}&serif=#{serif}&fontsize=#{fontsize}'>[Download SVG]</a>
 </small>
 </div>
 EOD
