@@ -3,8 +3,8 @@ class SyntaxTree
   FONTS_DIR = "#{RAILS_ROOT}/lib/fonts"
   FONT_SERIF      = "#{FONTS_DIR}/vera/VeraSe.ttf"
   FONT_NONSERIF   = "#{FONTS_DIR}/vera/Vera.ttf"
-  FONT_MBSERIF    = "#{FONTS_DIR}/ipa/ipamp.ttf"
-  FONT_MBNONSERIF = "#{FONTS_DIR}/ipa/ipagp.ttf"
+  FONT_MBSERIF    = "#{FONTS_DIR}/ipa/IPAPMincho.ttf"
+  FONT_MBNONSERIF = "#{FONTS_DIR}/ipa/IPAPGothic.ttf"
   FONT_MBNONJA    = "#{FONTS_DIR}/wqy-zenhei/wqy-zenhei.ttf"
   
   def initialize(options={})
@@ -56,7 +56,7 @@ class SyntaxTree
   def font
     if multibyte?
       if japanese? || !File.exist?(FONT_MBNONJA)
-        if @options[:serif]   
+        if @options[:serif]
           FONT_MBSERIF
         else
           FONT_MBNONSERIF
@@ -75,7 +75,10 @@ class SyntaxTree
   
   def multibyte?
     @data.strip.split(//).each do |chr|
-      return true unless /([!-~]|\s)/ =~ chr
+      unless /([!-~]|\s)/ =~ chr
+        ActionController::Base.logger.debug "Multibyte"
+        return true
+      end
     end
     false
   end

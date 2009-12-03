@@ -33,7 +33,8 @@ class RsyntaxtreeController < ApplicationController
   end
 
   def build_query
-    if !params[:data] || params[:data].empty?
+    @data = params[:data]
+    if !@data || @data.empty?
       render(:text => "There is no text to parse")
     end
   end

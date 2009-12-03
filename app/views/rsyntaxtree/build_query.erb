@@ -1,6 +1,6 @@
 <div id='phrase'><%= h @data %></div>
 <div id='graph'>
-  <%= image_tag url_for(params.merge(:action => 'draw_graph')), :alt => @data %>
+  <%= image_tag url_for(params.merge(:action => 'draw_graph')), :alt => h(@data) %>
 <br /><br />
 <small>
   <%= link_to "[Download SVG]", url_for(params.merge(:action => 'draw_graph', :format => 'svg')) %>
