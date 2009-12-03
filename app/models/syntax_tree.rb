@@ -75,10 +75,7 @@ class SyntaxTree
   
   def multibyte?
     @data.strip.split(//).each do |chr|
-      unless /([!-~]|\s)/ =~ chr
-        ActionController::Base.logger.debug "Multibyte"
-        return true
-      end
+      return true unless /([!-~]|\s)/ =~ chr
     end
     false
   end

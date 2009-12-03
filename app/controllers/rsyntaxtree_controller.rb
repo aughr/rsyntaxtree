@@ -45,7 +45,7 @@ class RsyntaxtreeController < ApplicationController
     disposition = @tree.svg? ? "attachment" : "inline"
     filename = "syntaxtree.#{@tree.format}"
     if image
-      send_data image, :disposition => disposition, :filename => filename
+      send_data image, :disposition => disposition, :filename => filename, :type => @tree.format.to_sym
     else
       render :nothing => true, :status => :unprocessable_entity
     end
