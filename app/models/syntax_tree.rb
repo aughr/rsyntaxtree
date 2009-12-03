@@ -34,8 +34,8 @@ class SyntaxTree
         image_data = graph.svg_data
       else
         image_data = graph.to_blob(@options[:format])
+        graph.destroy
       end
-      graph.destroy
       image_data
     end
   end
